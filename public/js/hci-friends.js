@@ -8,9 +8,20 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
+function listenerFunction(e){
+	console.log("Javascript connected!");
+	e.preventDefault();
+	var selectedName = $(this).text();
+	$(this).text(anagrammedName(selectedName));
+}
+
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friend .name").click(listenerFunction);
+	console.log("J!!!");
 }
+
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -44,3 +55,4 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+

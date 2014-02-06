@@ -3,5 +3,7 @@ var data = require('../data.json');
 
 exports.view = function(req, res){
 	console.log(data);
-	res.render('index');
+	// filter the list of friends to only include people who are under 65
+	res.render('index', { 'friends': data.friends });
+
 };
